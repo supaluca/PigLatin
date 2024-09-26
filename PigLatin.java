@@ -24,14 +24,22 @@ public class PigLatin{
         if (luca.isVowel(userInput.substring(0,1))){
             return luca.startsVowel(userInput);
         }
+        
         else{
             return luca.startsConsonant(s);
         }
     }
-    public static String startsTwoConsonant(String s){
-        String word = userInput.substring(0,1);
-        return userInput.substring(2) + word; 
+}
+    //public static String startsTwoConsonant(String s){
+        //String word = userInput.substring(0,1);
+        //return userInput.substring(2) + word; 
+        //if (luca.isVowel(userInput))
 
+        //}
+        /*public static void main (String[]args){
+            Scanner word = new Scanner(System)
         }
-    }
+            */
+    
+    //}
 
