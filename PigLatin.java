@@ -12,7 +12,7 @@ public class PigLatin{
         else{
             System.out.println(PigLatin.convertSentence(userInput));
 
-        }
+       }
 
         
         
@@ -43,7 +43,7 @@ public class PigLatin{
             return PigLatin.startsVowel(s);
         }
         else{
-            return PigLatin.startsTwoConsonant(s);
+            return (PigLatin.startsTwoConsonant(s)).toLowerCase();
 
         }
         
@@ -54,7 +54,8 @@ public class PigLatin{
         if (isVowel(s) == false){
             if(isVowel(s.substring(1,2))== false){
                 String word = s.substring(2);
-                return word + "ay";
+                String finalWord = word + s.substring(0,2)+ "ay";
+                return finalWord;
             }
             else{
                 return startsConsonant(s);
@@ -73,18 +74,16 @@ public class PigLatin{
     public static String convertSentence(String s){
         int wordNum1 = s.indexOf(" ");
         String word1 = s.substring(0, wordNum1);
-        String wordHalf = s.substring(wordNum1+1);
-        int wordNum2 = wordHalf.indexOf(" ");
+        int wordNum2 = s.indexOf(" ", (wordNum1+1));
         String word2 = s.substring(wordNum1+1, wordNum2);
-        String word2Half = s.substring(wordNum2+1);
-        int wordNum3 = word2Half.indexOf(" ");
-        String word3 = s.substring(wordNum2+1, wordNum3);
-        
+        String word3 = s.substring(wordNum2+1);
         String pigOne = convertWord(word1);
         String pigTwo = convertWord(word2);
         String pigThree = convertWord(word3);
-
-        return pigOne + " " + pigTwo + " " + pigThree;
+        
+        String finalSentence = (pigOne + " " + pigTwo + " " + pigThree);
+        
+        return finalSentence.toLowerCase();
 
     }
 }
